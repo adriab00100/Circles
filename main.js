@@ -5,7 +5,7 @@ var express = require('express')
   , appPort = 8081
 
 app.use(logger('dev'))
-app.use(express.static(__dirname + '/static'))
+app.use(express.static(__dirname + '/src/stylesheets'))
 
 app.get('/', function (req, res, next) {
   try {
