@@ -6,7 +6,8 @@ var express = require('express')
 
 app.use(logger('dev'))
 app.use(express.static(__dirname + '/src/stylesheets'))
-
+app.use(express.static(__dirname + '/src/images'))
+app.use('/js', express.static(__dirname + '/src/scripts'))
 app.get('/', function (req, res, next) {
   try {
     var html = template({ title: 'Home' })
