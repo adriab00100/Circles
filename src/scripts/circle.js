@@ -26,11 +26,11 @@ function TripletCircle(x, y, radius, subcircleAngle = null) {
         ctx.save();
         ctx.beginPath();
         ctx.lineWidth = this.radius/20;
-        ctx.strokeStyle = "hsl(0, 0%, " + (this.radius/4) + "%)";
+        ctx.strokeStyle = "hsl(0, 0%, " + (75-(ctx.lineWidth * 100)) + "%)";
         ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2, true);
         ctx.stroke();
         ctx.restore();
-		if (this.radius > 10 ) {
+		if (this.radius > 2 ) {
 			if (this.subcircles.length === 0) {
 				this.subcircles.push(new TripletCircle(0.3* this.radius * Math.cos(this.piOverTwo) + this.x, -0.3 * this.radius * Math.sin(this.piOverTwo) + this.y, this.radius/5.0, this.piOverTwo));
 				this.subcircles.push(new TripletCircle(0.3* this.radius * Math.cos(this.fivePiOverFour) + this.x, -0.3 * this.radius * Math.sin(this.fivePiOverFour) + this.y, this.radius/5.0, this.fivePiOverFour));
@@ -42,9 +42,6 @@ function TripletCircle(x, y, radius, subcircleAngle = null) {
 				this.subcircles[i].y = -0.3 * this.radius * Math.sin(this.subcircles[i].subcircleAngle) + this.y;
 				this.subcircles[i].draw(ctx);
 			}
-		}
-		else {
-			this.subcircles = [];
 		}
     }
 }
