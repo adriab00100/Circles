@@ -14,6 +14,5 @@ function DrawingContext(canvas) {
 		}
 		this.circle.radius = this.circle.radius + this.increment;
 		this.circle.draw(this.context);
-		window.requestAnimationFrame(window.mainDraw);
 	}
 }

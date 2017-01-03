@@ -7,4 +7,5 @@ $( document ).ready(function() {
 
 function mainDraw() {
 	window.drawingContext.draw();
+	window.requestAnimationFrame(mainDraw);
 }
