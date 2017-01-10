@@ -1,5 +1,5 @@
 function TripletCircle(x, y, radius) {
-	this.twoPie = Math.PI * 2.0;
+	this.twoPi = Math.PI * 2.0;
 	this.piOverTwo = Math.PI/2.0;
 	this.sevenPiOverSix = 7.0*Math.PI/6.0;
 	this.elevenPiOverSix = 11.0*Math.PI/6.0;
