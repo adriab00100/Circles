@@ -15,10 +15,10 @@ function DrawingContext(canvas) {
 		// todo: track zoomed circle
 		this.circle.draw(this.context);
 		this.translationTarget.draw(this.context);
-	}
+	};
 	
 	this.trackMouse = function (e) {
 		this.translationTarget.x = e.clientX - this.canvas_bounding.left;
 		this.translationTarget.y = e.clientY - this.canvas_bounding.top;
-	}
+	};
 }

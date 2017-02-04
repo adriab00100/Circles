@@ -20,13 +20,13 @@ function TripletCircle(x, y, radius) {
 		if (this.radius > this.childDrawMin ) {
 			this.drawChildren(ctx, this.x, this.y, this.radius);
 		}
-    }
+    };
 	
 	this.drawChildren = function (ctx, parentX, parentY, parentRadius) {
 		this.drawChild(ctx, this.piOverTwo, parentX, parentY, parentRadius);
 		this.drawChild(ctx, this.sevenPiOverSix, parentX, parentY, parentRadius);
 		this.drawChild(ctx, this.elevenPiOverSix, parentX, parentY, parentRadius);
-	}
+	};
 	
 	this.drawChild = function (ctx, angle, parentX, parentY, parentRadius) {
 		var childRadius = parentRadius/5.0;
@@ -43,5 +43,5 @@ function TripletCircle(x, y, radius) {
 		if (childRadius > this.childDrawMin ) {
 			this.drawChildren(ctx, childX, childY, childRadius);
 		}
-	}
+	};
 }

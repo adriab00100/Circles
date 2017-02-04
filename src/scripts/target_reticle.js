@@ -27,5 +27,5 @@ function TargetReticle() {
 		ctx.arc(this.x, this.y, 7.5, 0, Math.PI * 2, true);
         ctx.stroke();
 		ctx.restore();
-	}
+	};
 }
