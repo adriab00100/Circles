@@ -21,4 +21,10 @@ function DrawingContext(canvas) {
 		this.translationTarget.x = e.clientX - this.canvas_bounding.left;
 		this.translationTarget.y = e.clientY - this.canvas_bounding.top;
 	};
+	
+	this.onKeyPress = function (e) {
+		if (e.keyCode = 13) {
+			this.increment *= -1.0;
+		}
+	}
 }
