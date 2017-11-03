@@ -23,7 +23,7 @@ function DrawingContext(canvas) {
 	};
 	
 	this.onKeyPress = function (e) {
-		if (e.keyCode = 13) {
+		if (e.keyCode = 13 || e.keyCode = 32) {
 			this.increment *= -1.0;
 		}
 	}
