@@ -12,7 +12,7 @@ function DrawingContext(canvas) {
 	this.circle = new TripletCircle(this.canvas.width/2, this.canvas.height/2, 50);
 	this.translation_target = new TargetReticle();
 	
-	this.trackMouse = function (e) {
+	this.trackMouse = function (e) { // todo: handle scrolling, right now mouse gets desynced from target
 		this.translation_target.x = e.clientX - this.bounding_rect.left;
 		this.translation_target.y = e.clientY - this.bounding_rect.top;
 	};
@@ -54,6 +54,28 @@ function DrawingContext(canvas) {
 		// todo: track zoomed circle
 		this.circle.draw(this.context);
 		this.translation_target.draw(this.context);
-		
+		this.updateTranslationIncrements();
+	};
+	
+	this.canvas_y_center = this.bounding_rect.top + (this.canvas.height/2.0);
+	this.canvas_x_center = this.bounding_rect.left + (this.canvas.width/2.0);
+	// fake tracking just to see things move around
+	this.updateTranslationIncrements = function() {
+		if (this.translation_target.y <= this.canvas_y_center) { // TODO: should split canvas in thirds
+			this.translation_offset_x = 0.0;
+			if (this.circle.getChildY("top") > this.canvas_y_center) {
+				this.translation_offset_y = -1.0;
+			}
+		}
+		else if (this.translation_target.x <= this.canvas_x_center) {
+			this.translation_offset_x = -1.0;
+			this.translation_offset_y = 1.0;
+		}	
+		else {
+			this.translation_offset_x = 1.0;
+			this.translation_offset_y = 1.0;
+		}
+		this.circle.x += this.translation_offset_x;
+		this.circle.y += this.translation_offset_y;
 	};
 } 
