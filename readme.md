@@ -1,6 +1,6 @@
 # Circles
 
-A silly recursive sort of toy written in nodejs.
+A silly recursive sort of toy written in javascript, using nodejs to launch and run.
 
 # Getting started
 Want to try this out? 
